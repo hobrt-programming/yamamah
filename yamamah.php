@@ -34,6 +34,11 @@ class Sms
         $ar['password'] = $this->pass;
         $ar['Tagname'] = $this->userSender;
         $ar['Message'] = $msg;
+        
+        if($time !== false)
+		{
+			$ar['SendDateTime'] = date("YmdHi", strtotime($time));
+		}
 
         $i = 0;
 
